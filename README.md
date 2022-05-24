@@ -1,2 +1,2 @@
-# CurryVisionGames
-Making games in Unity and hopefully Unreal
+# Curry Vision Games
+Powered by Curry.
