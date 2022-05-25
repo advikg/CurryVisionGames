@@ -115,6 +115,7 @@
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
 -define:ENABLE_LEGACY_INPUT_MANAGER
+-define:UNITY_POST_PROCESSING_STACK_V2
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
@@ -326,6 +327,10 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.EditorCoroutines.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Performance.Profile-Analyzer.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Postprocessing.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Postprocessing.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.ProGrids.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.ProGrids.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Rider.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Services.Core.Analytics.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Services.Core.Environments.ref.dll"
@@ -349,10 +354,28 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/Brick Project Studio/Apartment Kit/Scripts & Animation/Closet/ClosetopencloseDoor.cs"
+"Assets/Brick Project Studio/Apartment Kit/Scripts & Animation/OvenOpen/OvenFlip.cs"
+"Assets/Brick Project Studio/Apartment Kit/Scripts & Animation/Slide/BRGlassDoor.cs"
+"Assets/Brick Project Studio/Apartment Kit/Scripts & Animation/Slide/opencloseSlide.cs"
+"Assets/Brick Project Studio/Apartment Kit/Scripts & Animation/TableFlip/TableFlipL.cs"
+"Assets/Brick Project Studio/Apartment Kit/Scripts & Animation/TableFlip/TableFlipR.cs"
+"Assets/Brick Project Studio/Apartment Kit/Scripts & Animation/Windows/opencloseWindowApt.cs"
+"Assets/Brick Project Studio/Apartment Kit/Scripts & Animation/Z Axis -1/Drawer_Pull_Zopp.cs"
+"Assets/Brick Project Studio/SE Basic Assets/Scripts and Animations/Doors/opencloseDoor.cs"
+"Assets/Brick Project Studio/SE Basic Assets/Scripts and Animations/Doors/opencloseDoor1.cs"
+"Assets/Brick Project Studio/SE Basic Assets/Scripts and Animations/Drawer/X Axis/Drawer_Pull_X.cs"
+"Assets/Brick Project Studio/SE Basic Assets/Scripts and Animations/Drawer/Z Axis/Drawer_Pull_Z.cs"
+"Assets/Brick Project Studio/SE Basic Assets/Scripts and Animations/First Person Player/MouseLook.cs"
+"Assets/Brick Project Studio/SE Basic Assets/Scripts and Animations/First Person Player/PlayerMovement.cs"
+"Assets/Brick Project Studio/SE Basic Assets/Scripts and Animations/First Person Player/SceneSwitchGen.cs"
+"Assets/Brick Project Studio/SE Basic Assets/Scripts and Animations/Windows/opencloseWindow.cs"
+"Assets/Brick Project Studio/SE Basic Assets/Scripts and Animations/Windows/opencloseWindow1.cs"
 "Assets/FurnishedCabin/Scripts/MoveableObject.cs"
 "Assets/FurnishedCabin/Scripts/MoveObjectController.cs"
 "Assets/FurnishedCabin/Scripts/Player/PlayerLook.cs"
 "Assets/FurnishedCabin/Scripts/Player/PlayerMove.cs"
+"Assets/Scripts/MouseLook.cs"
 "Assets/Scripts/Player.cs"
 -langversion:9.0
 

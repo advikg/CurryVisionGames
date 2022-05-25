@@ -10,47 +10,40 @@ public class Player : MonoBehaviour
     private bool jump;
     private float horizontal_in;
     private float backnforth_in;
-    private float mouse_x;
-    private float mouse_y;
     private Rigidbody rigid_body;
     private bool is_grounded;
-    
+    public CharacterController controller;
+    public float speed = 12f;
+    Vector3 velocity;
+    public float gravity = -9.81f;
+    public float ground_distance = 0.4f;
+    public LayerMask ground_mask;
+    public float jump_height = 3f;
 
     // Start is called before the first frame update
     void Start()
     {
-        rigid_body = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        is_grounded = Physics.CheckSphere(ground_check.position, ground_distance, ground_mask);
+        if (is_grounded && velocity.y < 0)
         {
-            jump = true;
+            velocity.y = -2f;
         }
         horizontal_in = Input.GetAxis("Horizontal");
         backnforth_in = Input.GetAxis("Vertical");
-        mouse_x = Input.GetAxis("Mouse X");
-        mouse_y = Input.GetAxis("Mouse Y");
-    }
-
-    private void FixedUpdate()
-    {
-        if (Physics.OverlapSphere(ground_check.position, 0.1f, playerMask).Length == 0)
+        Vector3 move = transform.right * horizontal_in + transform.forward * backnforth_in;
+        controller.Move(move * speed * Time.deltaTime);
+        if (Input.GetButtonDown("Jump") && is_grounded)
         {
-            is_grounded = false;
-        } else
-        {
-            is_grounded = true;
+            velocity.y = Mathf.Sqrt(jump_height * -2 * gravity);
         }
-
-        if (jump && is_grounded == true)
-        {
-            rigid_body.AddForce(Vector3.up * 3, ForceMode.VelocityChange);
-            jump = false;
-        }
-        rigid_body.velocity = new Vector3(horizontal_in, rigid_body.velocity.y, backnforth_in);
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
     }
 }
  
