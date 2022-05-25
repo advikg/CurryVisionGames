@@ -1,2 +1,2 @@
 # Curry Vision Games
-Powered by Curry.
+The official GitHub page for the William Cheng Horror Game
