@@ -437,13 +437,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 55
   controller: {fileID: 892387241}
-  speed: 4
+  speed: 3
   gravity: -9.81
   ground_distance: 0.4
   ground_mask:
     serializedVersion: 2
     m_Bits: 128
-  jump_height: 3
+  jump_height: 1
 --- !u!143 &892387241
 CharacterController:
   m_ObjectHideFlags: 0
@@ -560,7 +560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxVerticalAngleFromHorizon: 0
-  sensitivity: 5
+  sensitivity: 1000
   player_body: {fileID: 892387239}
   turn: {x: 0, y: 0}
 --- !u!1 &1152612147

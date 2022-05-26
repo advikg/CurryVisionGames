@@ -29,23 +29,23 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        is_grounded = Physics.CheckSphere(ground_check.position, ground_distance, ground_mask);
+        is_grounded = Physics.CheckSphere(ground_check.position, ground_distance, ground_mask); // checks if the player is on the ground
         if (is_grounded && velocity.y < 0)
         {
-            velocity.y = -2f;
+            velocity.y = -2f; // resets the velocity to the ground if the player is not going up
         }
 
-        horizontal_in = Input.GetAxis("Horizontal");
+        horizontal_in = Input.GetAxis("Horizontal");    
         backnforth_in = Input.GetAxis("Vertical");
-        Vector3 move = transform.right * horizontal_in + transform.forward * backnforth_in;
-        controller.Move(move * speed * Time.deltaTime);
+        Vector3 move = transform.right * horizontal_in + transform.forward * backnforth_in; // defines a vector3 for movement based on input
+        controller.Move(move * speed * Time.deltaTime); // does the actual movement
 
-        if (Input.GetButtonDown("Jump") && is_grounded)
+        if (Input.GetButton("Jump") && is_grounded) // if u are jumping and are on the ground
         {
-            velocity.y = Mathf.Sqrt(jump_height * -2 * gravity);
+            velocity.y = Mathf.Sqrt(jump_height * -2 * gravity); // jump and gravity
         }
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
+        velocity.y += gravity * Time.deltaTime; // gravity
+        controller.Move(velocity * Time.deltaTime); // gravity movement
     }
 }
  

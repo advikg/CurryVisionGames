@@ -29,8 +29,8 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float mouse_x = Input.GetAxis("Mouse X") * sensitivity; //get x val
-        float mouse_y = Input.GetAxis("Mouse Y") * sensitivity; //get y val
+        float mouse_x = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime; //get x val
+        float mouse_y = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime; //get y val
 
         x_rotation -= mouse_y;
         x_rotation = Mathf.Clamp(x_rotation, -90f, 90f);
@@ -38,7 +38,7 @@ public class MouseLook : MonoBehaviour
         rotation.y = ClampVerticalAngle(rotation.y);
 
         transform.localRotation = Quaternion.Euler(x_rotation, rotation.y, 0f); //convert mouse pos to camera movement
-        player_body.Rotate(Vector3.up * mouse_x);
+        player_body.Rotate(Vector3.up * mouse_x); // rotates the player based on camera
         
     }
 }
