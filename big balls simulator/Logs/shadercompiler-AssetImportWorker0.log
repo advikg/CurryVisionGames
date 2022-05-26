@@ -1,4 +1,12 @@
+<<<<<<< Updated upstream
 Base path: 'C:/Program Files/Unity/Hub/Editor/2021.3.3f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2021.3.3f1/Editor/Data/PlaybackEngines'
+=======
+<<<<<<< HEAD
+Base path: 'D:/Unity/2021.3.3f1/Editor/Data', plugins path 'D:/Unity/2021.3.3f1/Editor/Data/PlaybackEngines'
+=======
+Base path: 'C:/Program Files/Unity/Hub/Editor/2021.3.3f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2021.3.3f1/Editor/Data/PlaybackEngines'
+>>>>>>> 46e25769db1ae11f125e26cb9743a46a04ba3e27
+>>>>>>> Stashed changes
 Cmd: initializeCompiler
 
 Unhandled exception: Protocol error - failed to read magic number (error -2147483644, transferred 0/4)
