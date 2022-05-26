@@ -559,8 +559,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1172ccaee432a234f90fe03b5b975608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouse_sens: 100
+  maxVerticalAngleFromHorizon: 0
+  sensitivity: 5
   player_body: {fileID: 892387239}
+  turn: {x: 0, y: 0}
 --- !u!1 &1152612147
 GameObject:
   m_ObjectHideFlags: 0

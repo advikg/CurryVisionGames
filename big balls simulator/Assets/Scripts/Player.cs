@@ -34,10 +34,12 @@ public class Player : MonoBehaviour
         {
             velocity.y = -2f;
         }
+
         horizontal_in = Input.GetAxis("Horizontal");
         backnforth_in = Input.GetAxis("Vertical");
         Vector3 move = transform.right * horizontal_in + transform.forward * backnforth_in;
         controller.Move(move * speed * Time.deltaTime);
+
         if (Input.GetButtonDown("Jump") && is_grounded)
         {
             velocity.y = Mathf.Sqrt(jump_height * -2 * gravity);

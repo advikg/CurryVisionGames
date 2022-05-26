@@ -5,27 +5,40 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour
 {
 
-    public float mouse_sens = 100;
+    [Tooltip("The maximum angle from the horizon the player can rotate, in degrees")]
+    [SerializeField] private float maxVerticalAngleFromHorizon;
+
+    public float sensitivity = .5f; //sensitivity multiplier
     public Transform player_body;
     float x_rotation = 0f;
+
+    public Vector2 turn;
+    private Vector2 rotation;
+
+    private float ClampVerticalAngle(float angle)
+    {
+        return Mathf.Clamp(angle, -maxVerticalAngleFromHorizon, maxVerticalAngleFromHorizon);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked; //locks cursor
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    private void FixedUpdate()
-    {
-        float mouse_x = Input.GetAxis("Mouse X") * 80;
-        float mouse_y = Input.GetAxis("Mouse Y") * 80;
+        float mouse_x = Input.GetAxis("Mouse X") * sensitivity; //get x val
+        float mouse_y = Input.GetAxis("Mouse Y") * sensitivity; //get y val
+
         x_rotation -= mouse_y;
         x_rotation = Mathf.Clamp(x_rotation, -90f, 90f);
-        transform.localRotation = Quaternion.Euler(x_rotation, 0f, 0f);
+
+        rotation.y = ClampVerticalAngle(rotation.y);
+
+        transform.localRotation = Quaternion.Euler(x_rotation, rotation.y, 0f); //convert mouse pos to camera movement
         player_body.Rotate(Vector3.up * mouse_x);
+        
     }
 }
