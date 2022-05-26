@@ -8,11 +8,16 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask playerMask;
 
     private bool jump;
-    private float horizontal_in;
-    private float backnforth_in;
+
+    private float horizontalInput;
+    private float backAndForthInput;
+
     private Rigidbody rigid_body;
+
     private bool is_grounded;
+
     public CharacterController controller;
+
     public float speed = 12f;
     Vector3 velocity;
     public float gravity = -9.81f;
@@ -32,15 +37,16 @@ public class Player : MonoBehaviour
         is_grounded = Physics.CheckSphere(ground_check.position, ground_distance, ground_mask); // checks if the player is on the ground
         if (is_grounded && velocity.y < 0)
         {
-            velocity.y = -2f; // resets the velocity to the ground if the player is not going up
+            velocity.y = -2f; // resets the velocity to the ground if the player is not going up; negative velocity forces the player downwards
         }
 
-        horizontal_in = Input.GetAxis("Horizontal");    
-        backnforth_in = Input.GetAxis("Vertical");
-        Vector3 move = transform.right * horizontal_in + transform.forward * backnforth_in; // defines a vector3 for movement based on input
-        controller.Move(move * speed * Time.deltaTime); // does the actual movement
+        horizontalInput = Input.GetAxis("Horizontal");
+        backAndForthInput = Input.GetAxis("Vertical");
 
-        if (Input.GetButton("Jump") && is_grounded) // if u are jumping and are on the ground
+        Vector3 move = transform.right * horizontalInput + transform.forward * backAndForthInput; // defines a vector3 for movement based on input
+        controller.Move(speed * Time.deltaTime * move); // does the actual movement
+
+        if (Input.GetButton("Jump") && is_grounded) // if you are jumping and are on the ground
         {
             velocity.y = Mathf.Sqrt(jump_height * -2 * gravity); // jump and gravity
         }
