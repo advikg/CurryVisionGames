@@ -18,7 +18,6 @@ public class Player : MonoBehaviour
     public float gravity = -9.81f;
     public float ground_distance = 0.4f;
     public LayerMask ground_mask;
-    public float jump_height = 3f;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +39,7 @@ public class Player : MonoBehaviour
         controller.Move(move * speed * Time.deltaTime);
         if (Input.GetButtonDown("Jump") && is_grounded)
         {
-            velocity.y = Mathf.Sqrt(jump_height * -2 * gravity);
+            velocity.y = Mathf.Sqrt(1 * -2 * gravity);
         }
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
