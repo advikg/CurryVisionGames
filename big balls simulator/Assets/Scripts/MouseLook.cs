@@ -24,6 +24,11 @@ public class MouseLook : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked; //locks cursor
+        //Vector3 newVec = new Vector3(0f, 0f, 0f);
+        //newVec.y = angle;
+        //transform.eulerAngles = newVec;
+
+
     }
 
     // Update is called once per frame
